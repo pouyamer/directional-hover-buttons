@@ -1,0 +1,77 @@
+.dbtn {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.dbtn-container {
+  display: grid;
+  /* transition: 300ms ease-in-out; */
+}
+.dbtn-container:hover {
+  transition: 300ms ease-in-out;
+}
+
+.dbtn-container:is(.top, .bottom) {
+  width: 100%;
+  height: 200%;
+}
+
+.dbtn-container:is(.left, .right) {
+  width: 200%;
+  height: 100%;
+}
+
+.dbtn-container.left {
+  grid-template-areas: "inactive active";
+  translate: 0 0;
+}
+
+.dbtn-container.left:hover {
+  translate: -50% 0;
+}
+
+.dbtn-container.right {
+  grid-template-areas: "active inactive";
+  translate: -50% 0;
+}
+
+.dbtn-container.right:hover {
+  translate: 0 0;
+}
+
+.dbtn-container.top {
+  grid-template-areas: "inactive" "active";
+  translate: 0 0;
+}
+
+.dbtn-container.top:hover {
+  translate: 0 -50%;
+}
+
+.dbtn-container.bottom {
+  grid-template-areas: "active" "inactive";
+
+  translate: 0 -50%;
+}
+
+.dbtn-container.bottom:hover {
+  translate: 0 0;
+}
+
+.dbtn-content {
+  /* centering the content */
+  display: grid;
+  place-content: center;
+}
+
+.dbtn-content.inactive {
+  grid-area: inactive;
+  background-color: gray;
+}
+
+.dbtn-content.active {
+  grid-area: active;
+
+  background-color: skyblue;
+}
